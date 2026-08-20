@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Programming and AI Club,Department of EEE,UAP</title>
+    <!-- This is the CSS file - you don't need to edit it -->
+    <style>
+        /* ============================================
+           ALL CSS IS HERE - YOU DON'T NEED TO TOUCH THIS
+           Just change the HTML below
+           ============================================ */
+
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: #222;
+            line-height: 1.7;
+            background: #fafafa;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #003057;
+            padding: 0.8rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+
+        nav ul li a:hover {
+            background-color: #1a4b75;
+        }
+
+        /* Sections */
+        section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+            border-bottom: 1px solid #eaeaea;
+            background: white;
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            color: #003057;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            color: #003057;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #eaeaea;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            color: #003057;
+            margin-top: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            color: #555;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Home Section */
+        #home {
+            text-align: center;
+            padding: 5rem 1.5rem;
+            background: #f4f6f9;
+        }
+
+        #home .btn {
+            display: inline-block;
+            background-color: #003057;
+            color: white;
+            padding: 0.6rem 2rem;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 500;
+            margin-top: 1rem;
+            transition: background-color 0.2s;
+        }
+
+        #home .btn:hover {
+            background-color: #1a4b75;
+        }
+
+        /* Stats */
+        .stat-grid {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            flex: 1;
+            min-width: 120px;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #003057;
+        }
+
+        .stat-label {
+            display: block;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* Benefits - checkmark list */
+        #benefits ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #benefits ul li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.8rem;
+            position: relative;
+        }
+
+        #benefits ul li::before {
+            content: "✓";
+            color: #003057;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Events */
+        #events ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #events ul li {
+            margin-bottom: 0.8rem;
+            padding: 0.5rem 1rem;
+            background: #f8f9fa;
+            border-radius: 6px;
+        }
+
+        /* Team - simple cards */
+        .team-grid {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .team-card {
+            background: #f8f9fa;
+            padding: 1.2rem 1.8rem;
+            border-radius: 8px;
+            flex: 1;
+            min-width: 150px;
+            text-align: center;
+        }
+
+        .team-card .role {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: #f4f6f9;
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            nav ul {
+                gap: 0.8rem;
+            }
+            nav ul li a {
+                font-size: 0.9rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.6rem;
+            }
+            .stat-grid {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+         NAVIGATION - Change links if needed
+         ============================================ -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#stats">Stats</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#team">Team</a></li>
+        </ul>
+    </nav>
+
+    <!-- ============================================
+         HOME SECTION - Edit this section
+         ============================================ -->
+    <section id="home">
+        <h1>🤖 Programming and AI Club,Department of EEE,UAP</h1>
+        <p class="tagline">Building the future, Your embedded Journey started hera.</p>
+        <p>We are a student-run club focused on robotics, AI, and automation.</p>
+        <a href="#about" class="btn">Learn More</a>
+    </section>
+
+    <!-- ============================================
+         ABOUT SECTION - Edit this section
+         ============================================ -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>
+            <strong>Our Mission:</strong> To inspire and educate students in the field of robotics
+            through hands-on projects, workshops, and competitions.
+        </p>
+        <p>
+            We welcome members from all backgrounds — whether you're a beginner or an expert,
+            there's a place for you here. Our club organizes regular meetups, guest lectures,
+            and collaborative projects.
+        </p>
+        <p>
+            <strong>Focus Areas:</strong> Industrial automation, AI-powered robotics, drone
+            technology, and human-robot interaction.
+        </p>
+    </section>
+
+    <!-- ============================================
+         STATS SECTION - Edit the numbers
+         ============================================ -->
+    <section id="stats">
+        <h2>Our Impact</h2>
+        <div class="stat-grid">
+            <div class="stat-item">
+                <span class="stat-number">12</span>
+                <span class="stat-label">Officers</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">75+</span>
+                <span class="stat-label">Members</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">8</span>
+                <span class="stat-label">Events This Year</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">3</span>
+                <span class="stat-label">Competitions Won</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         BENEFITS SECTION - Edit this list
+         ============================================ -->
+    <section id="benefits">
+        <h2>Member Benefits</h2>
+        <ul>
+            <li><strong>Networking:</strong> Connect with industry professionals and alumni.</li>
+            <li><strong>Workshops:</strong> Learn new skills through hands-on sessions.</li>
+            <li><strong>Lab Access:</strong> Use our dedicated robotics lab and equipment.</li>
+            <li><strong>Competitions:</strong> Represent our club in national and international events.</li>
+            <li><strong>Exclusive Resources:</strong> Access to online courses and software tools.</li>
+        </ul>
+    </section>
+
+    <!-- ============================================
+         EVENTS SECTION - Edit this list
+         ============================================ -->
+    <section id="events">
+        <h2>Upcoming Events</h2>
+        <ul>
+            <li><strong>Embedded Programming Bootcamp 2026:</strong> August 20-22 — A 3-day intensive workshop.</li>
+            <li><strong>Industry Talk:</strong> September 5 — Guest lecture from a leading roboticist.</li>
+            <li><strong>Hackathon:</strong> October 15-16 — 24-hour robotics challenge.</li>
+            <li><strong>Open House:</strong> November 1 — Tour our lab and meet the team.</li>
+        </ul>
+    </section>
+
+    <!-- ============================================
+         TEAM SECTION - Edit member names and roles
+         ============================================ -->
+    <section id="team">
+        <h2>Our Team</h2>
+        <p>Meet the people behind the club.</p>
+        <div class="team-grid">
+            <div class="team-card">
+                <strong>Md. Masum Howlader</strong>
+                <div class="role">Faculty Advisor</div>
+            </div>
+            <div class="team-card">
+                <strong>Not Selected</strong>
+                <div class="role">President</div>
+            </div>
+            <div class="team-card">
+                <strong>Not Selected</strong>
+                <div class="role">Vice President</div>
+            </div>
+            <div class="team-card">
+                <strong>Md Xunid Emon</strong>
+                <div class="role">General Secretary</div>
+            </div>
+            <div class="team-card">
+                <strong>Protick Nowsherowa Khandkar</strong>
+                <div class="role">Technical Lead</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER - Edit this
+         ============================================ -->
+    <footer>
+        <p>© 2026 Progamming and AI Club. Made with ❤️ by our team.</p>
+        <p style="margin-top:0.3rem; font-size:0.8rem;">
+            Contact us: <a href="paiclubeee@uap-bd.edu" style="color:#003057;">paiclubeee@uap-bd.edu</a>
+        </p>
+    </footer>
+
+</body>
+</html>
